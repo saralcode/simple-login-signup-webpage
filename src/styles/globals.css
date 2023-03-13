@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbarbefore::before{
+  content: "";
+  @apply  w-0 mx-2 h-0.5 mt-1 bg-blue-500 absolute inline-block transition-all top-9 -left-1.5 right-0;
+}
+#__next{
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+a{
+  @apply no-underline !important;
+}
+#prose {
+  min-height: 100vh;
+  @apply  z-0 overflow-visible dark:marker:text-white overscroll-none scroll-smooth select-none transition-all bg-white dark:bg-gradient-to-tr prose-em:font-semibold dark:from-[#000428] dark:to-[#182848] bg-no-repeat;
+  @apply prose dark:prose-invert h-full w-full min-w-full relative prose-blockquote:border-l-slate-400 prose-blockquote:dark:bg-slate-700 prose-blockquote:rounded-r-sm prose-blockquote:inline-block prose-blockquote:pr-2 prose-blockquote:ml-2 prose-blockquote:bg-slate-200 prose-a:cursor-pointer prose-h1:text-3xl prose-h1:sm:text-4xl transition-all prose-a:no-underline prose-a:text-blue-500;
+
+}
+body{
+  @apply bg-white overflow-x-hidden max-w-[100vw];
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  overflow: hidden;
+}
