@@ -1,31 +1,39 @@
 import SmallTitle from "@/lib/pagecomponents/custom/smalltitle";
-import { useState } from "react";
-import {
-  signInWithEmailAndPassword,
-  updateProfile,
-  getAuth,
-} from "firebase/auth";
+import { useEffect, useState } from "react";
+import { useAuthContext } from "@/lib/firebase/auth_context";
+import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import firebase_app from "@/lib/firebase/init";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 const auth = getAuth(firebase_app);
 
-
 function Login() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { user } = useAuthContext();
+  useEffect(() => {
+    if (user) {
+      router.push("/profile");
+    }
+  }, [user]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const credential =  await signInWithEmailAndPassword(auth, email, password);
-
+      const credential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
       setEmail("");
       setPassword("");
-       Cookies.set("token", await credential.user.getIdToken(), {expires:365})
+      Cookies.set("token", await credential.user.getIdToken(), {
+        expires: 365,
+      });
       alert("Successfully logined");
       router.replace("/");
     } catch (error) {

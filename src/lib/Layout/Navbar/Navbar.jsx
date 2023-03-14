@@ -8,7 +8,7 @@ const authItems = [
   { url: "/", name: "Home" },
   { url: "/about-us", name: "About Us" },
   { url: "/contact-us", name: "Contact Us" },
-  { url: "/logout", name: "Logout" },
+  { url: "/profile", name: "Profile" },
 
 ];
 const unAuthItems = [

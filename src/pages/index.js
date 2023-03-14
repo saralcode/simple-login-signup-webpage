@@ -4,10 +4,6 @@ import Services from "@/lib/pagecomponents/pages/home/services";
 import Testomonial from "@/lib/pagecomponents/pages/home/testomonial";
 import Whoweare from "@/lib/pagecomponents/pages/home/whoweare";
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { useAuthContext } from "@/lib/firebase/auth_context";
-
 export default function Home() {
 
   return (

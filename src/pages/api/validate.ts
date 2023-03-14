@@ -1,8 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-
-import { initializeApp, applicationDefault, getApps } from 'firebase-admin/app'
 import * as admin from 'firebase-admin';
-import serviceAccount from './serviceAccount.json';
+
 
 async function verifyIdToken(token: string) {
   console.log("verifying token");
@@ -11,7 +9,13 @@ async function verifyIdToken(token: string) {
 
 
     admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount as admin.ServiceAccount)
+      credential: admin.credential.cert({
+        privateKey: process.env.private_key,
+        projectId: process.env.project_id,
+        clientEmail: process.env.client_email,
+      }),
+      projectId: process.env.private_id,
+      databaseURL: `https://${process.env.NEXT_PUBLIC_projectId}.firebaseio.com'`
     });
   } catch (error) {
     console.log("already initialized");

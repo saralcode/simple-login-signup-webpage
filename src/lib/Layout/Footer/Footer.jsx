@@ -11,15 +11,15 @@ export const about = [
 ]
 
 const AboutItems = [
-  { name: "Terms & Conditions", url: "/terms-and-conditions" },
-  { name: "Privacy Policy", url: "/privacy-policy" },
-  { name: "Custome Service", url: "/about-us/developer" },
-  { name: "FAQs", url: "/about-us/" },
+  { name: "Terms & Conditions", url: "/" },
+  { name: "Privacy Policy", url: "/" },
+  { name: "Custome Service", url: "/" },
+  { name: "FAQs", url: "/" },
 ];
 const Social = [
-  { name: "Facebook", url: "/" },
-  { name: "Instagram", url: "/" },
-  { name: "Youtube", url: "/" },
+  { name: "Linkedin", url: "https://www.linkedin.com/in/sonu06/" },
+  { name: "Instagram", url: "https://instagram.com/saralcode" },
+  { name: "Youtube", url: "https://www.youtube.com/@saralcode" },
 ];
 const QuickLinks = [
   { name: "Brochure", url: "/" },
@@ -102,10 +102,10 @@ const Footer = () => {
 
       </div>
 
-      <div className="border-t-2 h-20 justify-center border-white p-2 px-4 w-11/12 text-white flex items-center flex-col sm:flex-row  ">
+      <div className="border-t-2 h-20  justify-center border-white p-2 px-4 w-11/12 text-white flex items-center flex-col  ">
 
-        <span>&copy; Copyright 2023</span>
-        <span>&nbsp; All Rights Reserved.</span>
+        <span className="block">&copy; Copyright 2023, by <Link href="https://www.saralcode.com" >www.saralcode.com</Link> </span>
+        <span className="block">&nbsp; All Rights Reserved.</span>
 
         {/* </div> */}
       </div>
